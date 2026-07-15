@@ -14,9 +14,6 @@
   "author": "",
   "type": "commonjs",
   "main": "index.js",
-  "scripts": {
-    "test": "http-server"
-  },
   "dependencies": {
     "http-server": "^14.1.1"
   }
