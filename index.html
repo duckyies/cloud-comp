@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <title>Test Page</title>
+        <style>
+            .box {
+                height: fit-content;
+                width: 200px;
+                margin-left: 50px   ;
+                box-shadow: 10px;
+                border: 10px;
+                background-color: grey;
+                align-items: center;
+                justify-content: center;
+            }
+        </style>
+        <script>
+            function validate() {
+                const pass = document.getElementById("pass").value
+                if(pass.length < 8) {
+                    document.getElementById("inv").hidden = false
+                }
+                else {
+                    document.getElementById("valid").hidden = false
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div class="box">
+            <form>
+                <input type="text" placeholder="Enter username">
+                <br>
+                <input type="password" id="pass" placeholder="Enter Password">
+                <br><br>
+            </form>
+            <button id="submit_button" onclick="validate()">Submit</button> 
+            <br><br>
+            <h1 hidden id="inv">Invalid password</h1>     
+            <h1 hidden id="valid">Login successful</h1>         
+        </div>
+    </body>
+</html>
