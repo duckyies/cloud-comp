@@ -6,6 +6,8 @@ const port = process.env.PORT || 3000;
 app.use(bodyParser.json());
 app.use(express.static('public'));
 
+console.log(1)
+
 app.post('/submit', (req, res) => {
   const { name, email } = req.body;
   console.log('Received data:', name, email);
