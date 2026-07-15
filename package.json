@@ -1,0 +1,20 @@
+{
+  "name": "test-app",
+  "version": "1.0.0",
+  "description": "test app",
+  "homepage": "https://github.com/duckyies/cloud-comp#readme",
+  "bugs": {
+    "url": "https://github.com/duckyies/cloud-comp/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/duckyies/cloud-comp.git"
+  },
+  "license": "MIT",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
