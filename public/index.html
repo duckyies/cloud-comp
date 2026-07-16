@@ -1,42 +1,98 @@
+<!DOCTYPE html>
 <html>
-    <head>
-        <title>Test Page</title>
-        <style>
-            .box {
-                height: fit-content;
-                width: 200px;
-                margin-left: 50px   ;
-                box-shadow: 10px;
-                border: 10px;
-                background-color: red;
-                align-items: center;
-                justify-content: center;
+<head>
+    <title>Login Page</title>
+
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #f4f4f4;
+            font-family: Arial, sans-serif;
+        }
+
+        .box {
+            width: 280px;
+            padding: 25px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        input {
+            width: 90%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+
+        .success {
+            color: green;
+            font-size: 16px;
+        }
+
+        .error {
+            color: red;
+            font-size: 16px;
+        }
+    </style>
+
+    <script>
+        function validate() {
+            const pass = document.getElementById("pass").value;
+
+            document.getElementById("inv").hidden = true;
+            document.getElementById("valid").hidden = true;
+
+            if (pass.length < 8) {
+                document.getElementById("inv").hidden = false;
+            } else {
+                document.getElementById("valid").hidden = false;
             }
-        </style>
-        <script>
-            function validate() {
-                const pass = document.getElementById("pass").value
-                if(pass.length < 8) {
-                    document.getElementById("inv").hidden = false
-                }
-                else {
-                    document.getElementById("valid").hidden = false
-                }
-            }
-        </script>
-    </head>
-    <body>
-        <div class="box">
-            <form>
-                <input type="text" placeholder="Enter username">
-                <br>
-                <input type="password" id="pass" placeholder="Enter Password">
-                <br><br>
-            </form>
-            <button id="submit_button" onclick="validate()">Submit</button> 
+        }
+    </script>
+</head>
+
+<body>
+
+    <div class="box">
+        <h2>Login</h2>
+
+        <form onsubmit="return false;">
+            <input type="text" placeholder="Username">
+            <input type="password" id="pass" placeholder="Password">
             <br><br>
-            <h1 hidden id="inv">Invalid password</h1>     
-            <h1 hidden id="valid">Login successful</h1>         
-        </div>
-    </body>
+            <button onclick="validate()">Submit</button>
+        </form>
+
+        <p id="inv" class="error" hidden>❌ Invalid password (minimum 8 characters)</p>
+        <p id="valid" class="success" hidden>✅ Login successful</p>
+    </div>
+
+</body>
 </html>
